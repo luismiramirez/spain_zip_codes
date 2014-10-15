@@ -45,6 +45,17 @@ SpainZipCodes.province_to_zip(province)
 => '28'
 ```
 
+### Locations
+
+To get a location name from a zip code do:
+
+```ruby
+SpainZipCodes.zip_to_location(zip)
+
+-> SpainZipCodes.zip_to_location('28922')
+=> 'Alcorcón'
+```
+
 Note:
 
 Arguments need to be strings.
