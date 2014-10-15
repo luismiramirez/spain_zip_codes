@@ -1,5 +1,7 @@
 # SpainZipCodes
 
+[![Build Status](https://travis-ci.org/luismiramirez/spain_zip_codes.svg?branch=master)](https://travis-ci.org/luismiramirez/spain_zip_codes)
+
 With SpainZipCodes you can obtain Spain locations and provinces using a zip code and you can obtain zip codes for provinces and locations using their names!
 
 ## Installation
