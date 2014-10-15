@@ -2,7 +2,7 @@ require 'yaml'
 
 module SpainZipCodes
   class Provincer
-    SOURCE_YAML = 'lib/spain_zip_codes/data/zip_provinces_es.yml'
+    SOURCE_YAML = %w(lib spain_zip_codes data zip_provinces_es.yml).join('/')
     PROVINCES   = YAML.load_file(SOURCE_YAML).fetch('provinces')
 
     def self.to_province(zip)

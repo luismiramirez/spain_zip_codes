@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe 'SpainZipCodes' do
   before(:each) do
-    @provincer = SpainZipCodes::Provincer
+    @provincer  = SpainZipCodes::Provincer
+    @locationer = SpainZipCodes::Locationer
   end
 
   describe '#zip_to_province' do
@@ -22,6 +23,16 @@ describe 'SpainZipCodes' do
       expect(@provincer).to receive(:to_zip).with(province)
 
       SpainZipCodes.province_to_zip(province)
+    end
+  end
+
+  describe '#zip_to_location' do
+    it 'calls Locationer#to_zip with params' do
+      zip = '28047'
+
+      expect(@locationer).to receive(:to_location).with(zip)
+
+      SpainZipCodes.zip_to_location(zip)
     end
   end
 end

@@ -1,5 +1,6 @@
 require 'spain_zip_codes/version'
 require 'spain_zip_codes/provincer'
+require 'spain_zip_codes/locationer'
 
 module SpainZipCodes
   def self.zip_to_province(zip)
@@ -8,5 +9,9 @@ module SpainZipCodes
 
   def self.province_to_zip(province)
     Provincer.to_zip(province)
+  end
+
+  def self.zip_to_location(zip)
+    Locationer.to_location(zip)
   end
 end
