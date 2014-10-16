@@ -35,4 +35,14 @@ describe 'SpainZipCodes' do
       SpainZipCodes.zip_to_location(zip)
     end
   end
+
+  describe '#location_to_zip' do
+    it 'calls Locationer#to_zip with params' do
+      location = 'Fuenlabrada'
+
+      expect(@locationer).to receive(:to_zip).with(location)
+
+      SpainZipCodes.location_to_zip(location)
+    end
+  end
 end

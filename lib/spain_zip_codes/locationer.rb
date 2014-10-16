@@ -17,5 +17,9 @@ module SpainZipCodes
 
       location
     end
+
+    def self.to_zip(location)
+      LOCATIONS[location] || []
+    end
   end
 end

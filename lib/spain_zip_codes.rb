@@ -14,4 +14,8 @@ module SpainZipCodes
   def self.zip_to_location(zip)
     Locationer.to_location(zip)
   end
+
+  def self.location_to_zip(location)
+    Locationer.to_zip(location)
+  end
 end

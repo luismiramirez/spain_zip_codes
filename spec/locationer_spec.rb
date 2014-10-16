@@ -24,4 +24,20 @@ describe 'Locationer' do
       end
     end
   end
+
+  describe '#to_zip' do
+    context 'with existing location' do
+      it 'returns an array of zip codes' do
+        expected_result = %w(28920 28921 28922 28923 28924 28925)
+
+        expect(@locationer.to_zip('Alcorcón')).to eq(expected_result)
+      end
+    end
+
+    context 'with unexisting location' do
+      it 'returns an empty array' do
+        expect(@locationer.to_zip('Jamón Serrano')).to eq([])
+      end
+    end
+  end
 end
