@@ -18,4 +18,12 @@ module SpainZipCodes
   def self.location_to_zip(location)
     Locationer.to_zip(location)
   end
+
+  def self.location_slug_to_zip(location_slug)
+    Locationer.slug_to_zip(location_slug)
+  end
+
+  def self.zip_to_location_slug(zip)
+    Locationer.zip_to_slug(zip)
+  end
 end

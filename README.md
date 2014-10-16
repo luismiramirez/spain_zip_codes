@@ -28,7 +28,7 @@ require 'spain_zip_codes'
 
 ### Provinces
 
-To get a province name from a zip code do:
+#### To get a province name from a zip code do:
 
 ```ruby
 SpainZipCodes.zip_to_province(zip)
@@ -37,7 +37,7 @@ SpainZipCodes.zip_to_province(zip)
 => 'Madrid'
 ```
 
-To get a zip code prefix for a province do:
+#### To get a zip code prefix for a province do:
 
 ```ruby
 SpainZipCodes.province_to_zip(province)
@@ -48,7 +48,7 @@ SpainZipCodes.province_to_zip(province)
 
 ### Locations
 
-To get a location name from a zip code do:
+#### To get a location name from a zip code do:
 
 ```ruby
 SpainZipCodes.zip_to_location(zip)
@@ -57,7 +57,7 @@ SpainZipCodes.zip_to_location(zip)
 => 'Alcorcón'
 ```
 
-To get the zip codes from a location name do:
+#### To get the zip codes from a location name do:
 
 ```ruby
 SpainZipCodes.location_to_zip(location)
@@ -69,6 +69,24 @@ SpainZipCodes.location_to_zip(location)
 
 > SpainZipCodes.location_to_zip('Gallifrey')
 => []
+```
+
+#### To get the location slug from a zip code do:
+
+```ruby
+SpainZipCodes.zip_to_location_slug(zip)
+
+> SpainZipCodes.zip_to_location_slug('28750')
+=> 'san-agustin-de-guadalix'
+```
+
+#### To get the zip codes from a location slug:
+
+```ruby
+SpainZipCodes.location_slug_to_zip(location_slug)
+
+> SpainZipCodes.location_slug_to_zip('alcorcon')
+=> ['28920', '28921', '28922', '28923', '28924', '28925']
 ```
 
 Note:

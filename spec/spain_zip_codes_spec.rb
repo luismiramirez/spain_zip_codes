@@ -45,4 +45,24 @@ describe 'SpainZipCodes' do
       SpainZipCodes.location_to_zip(location)
     end
   end
+
+  describe '#location_slug_to_zip' do
+    it 'calls Locationer#slug_to_zip with params' do
+      location_slug = 'alcorcon'
+
+      expect(@locationer).to receive(:slug_to_zip).with(location_slug)
+
+      SpainZipCodes.location_slug_to_zip(location_slug)
+    end
+  end
+
+  describe '#zip_to_location_slug' do
+    it 'calls Locationer#zip_to_slug with params' do
+      zip = '28922'
+
+      expect(@locationer).to receive(:zip_to_slug).with(zip)
+
+      SpainZipCodes.zip_to_location_slug(zip)
+    end
+  end
 end

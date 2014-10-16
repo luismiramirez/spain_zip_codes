@@ -4,8 +4,8 @@ require File.expand_path('../lib/spain_zip_codes/version', __FILE__)
 Gem::Specification.new do |spec|
   spec.name          = 'spain_zip_codes'
   spec.version       = SpainZipCodes::VERSION
-  spec.authors       = ['Luismi Ramírez']
-  spec.email         = ['luismir89@gmail.com']
+  spec.authors       = ['Luismi Ramírez', 'Gustavo Caso']
+  spec.email         = ['luismir89@gmail.com', 'gustavocaso@gmail.com']
   spec.summary       = %q{Obtain provinces and locations based on zip code}
   spec.homepage      = 'https://github.com/luismiramirez/spain_zip_codes'
   spec.license       = 'MIT'
