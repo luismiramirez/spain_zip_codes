@@ -5,9 +5,9 @@ require 'yaml'
 
 module SpainZipCodes
   class Locationer
-    SOURCE_YAML = %w(lib spain_zip_codes data zip_locations_es.yml).join('/')
+    SOURCE_YAML = File.expand_path('../data/zip_locations_es.yml', __FILE__)
     LOCATIONS   = YAML.load_file(SOURCE_YAML)['locations']
-    SLUGS_YAML  = %w(lib spain_zip_codes data slug_locations_es.yml).join('/')
+    SLUGS_YAML  = File.expand_path('../data/slug_locations_es.yml', __FILE__)
     SLUGS_LOCS  = YAML.load_file(SLUGS_YAML)['locations']
 
     def self.to_location(zip)
