@@ -1,4 +1,5 @@
 require 'spain_zip_codes/version'
+require 'spain_zip_codes/places_list'
 require 'spain_zip_codes/provincer'
 require 'spain_zip_codes/locationer'
 

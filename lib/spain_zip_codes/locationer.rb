@@ -1,47 +1,22 @@
-require 'yaml'
-
-# This class has duplicated code some way, but I prefer to keep the methods
-# separated even if they are the same so they are easier to change in the future
-
 module SpainZipCodes
   class Locationer
-    SOURCE_YAML = File.expand_path('../data/zip_locations_es.yml', __FILE__)
-    LOCATIONS   = YAML.load_file(SOURCE_YAML)['locations']
-    SLUGS_YAML  = File.expand_path('../data/slug_locations_es.yml', __FILE__)
-    SLUGS_LOCS  = YAML.load_file(SLUGS_YAML)['locations']
+    LOCATIONS   = PlacesList.new('../data/zip_locations_es.yml')
+    SLUGS_LOCS  = PlacesList.new('../data/slug_locations_es.yml')
 
     def self.to_location(zip)
-      location = false
-
-      LOCATIONS.keys.each do |key|
-        if LOCATIONS[key].include?(zip)
-          location = key
-          break
-        end
-      end
-
-      location
+      LOCATIONS.find_from_value(zip)
     end
 
     def self.to_zip(location)
-      LOCATIONS[location] || []
+      LOCATIONS.find_from_key(location)
     end
 
     def self.slug_to_zip(location_slug)
-      SLUGS_LOCS[location_slug] || []
+      SLUGS_LOCS.find_from_key(location_slug)
     end
 
     def self.zip_to_slug(zip)
-      slug = false
-
-      SLUGS_LOCS.keys.each do |key|
-        if SLUGS_LOCS[key].include?(zip)
-          slug = key
-          break
-        end
-      end
-
-      slug
+      SLUGS_LOCS.find_from_value(zip)
     end
   end
 end
