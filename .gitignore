@@ -9,6 +9,8 @@ _yardoc
 coverage
 doc/
 lib/bundler/man
+*.DS_STORE
+.idea
 pkg
 rdoc
 spec/reports
